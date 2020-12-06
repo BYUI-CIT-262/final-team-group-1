@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  
+  zookeeper:
+    image:
+    ports:
+    environment: 
+
+  kafka:
+    image:
+    ports:
+    environment: 
+    depends_on: 
+
+  redis:
+    image: 
+    ports: 
+
+  stedi:
+    image: 
+    ports: 
+    environment: 
+    depends_on: 
