@@ -30,7 +30,7 @@ services:
   stedi:
     image: scmurdock/stedi
     ports: 
-    - "4567:4567"
+      - "4567:4567"
     environment: 
       KAFKA_BROKER_ID: 
       KAFKA_ZOOKEEPER_CONNECT: 
