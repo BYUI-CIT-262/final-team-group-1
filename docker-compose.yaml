@@ -3,9 +3,11 @@ version: '3.8'
 services:
   
   zookeeper:
-    image:
+    image: confluentic/cp-zookeeper:5.5.1
     ports:
+      - "2181:2181"
     environment: 
+      ZOOKEEPER_CLIENT_PORT: "2181"
 
   kafka:
     image: confluentinc/cp-kafka:5.2.2
