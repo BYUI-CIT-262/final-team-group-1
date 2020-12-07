@@ -33,9 +33,9 @@ services:
     ports: 
       - "4567:4567"
     environment:
-      KAFKA_BROKER_ID: 
-      KAFKA_ZOOKEEPER_CONNECT: 
-      KAFKA_INTER_BROKER_LISTENER_NAME: 
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 
-    depends_on: -"kafka
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379:6379"
+      REDIS_DB: "0"
+      KAFKA_BROKER: "kafka:19092"
+      KAFA_RISK_TOPIC: "customer-risk-topic"
+    depends_on: -"kafka"
