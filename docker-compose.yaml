@@ -3,9 +3,9 @@ version: '3.8'
 services:
   
   zookeeper:
-    image: confluentic/cp-zookeeper:5.5.1
+    image: confluentinc/cp-zookeeper:5.5.1
     ports:
-      - "2181:2181"
+    - "2181:2181"
     environment: 
       ZOOKEEPER_CLIENT_PORT: "2181"
 
@@ -24,11 +24,19 @@ services:
     - "zookeeper" 
 
   redis:
-    image: 
+    image: redis:6.0.6
     ports: 
+    - "6379:6379"
 
   stedi:
-    image: 
+    image: scmurdock/stedi
     ports: 
-    environment: 
+    - "4567:4567"
+    environment:
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379:6379"
+      REDIS_DB: "0"
+      KAFKA_BROKER: "kafka:9092"
+      KAFA_RISK_TOPIC: "customer-risk-topic"
     depends_on: 
+    - "kafka"
