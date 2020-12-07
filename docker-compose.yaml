@@ -14,8 +14,9 @@ services:
     depends_on: 
 
   redis:
-    image: 
+    image: edis:6.0.6
     ports: 
+      - "6379:6379"
 
   stedi:
     image: 
