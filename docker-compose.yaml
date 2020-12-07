@@ -5,11 +5,7 @@ services:
   zookeeper:
     image: confluentic/cp-zookeeper:5.5.1
     ports:
-<<<<<<< HEAD
       -"2181:2181"
-=======
-      - "2181:2181"
->>>>>>> 272dd1e73ec2fc307f70f736bbd76c612d077092
     environment: 
       ZOOKEEPER_CLIENT_PORT: "2181"
 
