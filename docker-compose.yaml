@@ -35,4 +35,5 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: 
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 
-    depends_on: 
+    depends_on: -"kafka"
+
