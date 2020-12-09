@@ -1,18 +1,20 @@
-version: '3.8'
+version: '3.7'
 
 services:
   
   zookeeper:
-    image: confluentic/cp-zookeeper:5.5.1
+    image: confluentinc/cp-zookeeper:5.5.1
     ports:
-      -"2181:2181"
+      - "2181:2181"
+
     environment: 
       ZOOKEEPER_CLIENT_PORT: "2181"
 
   kafka:
-    image: confluentinc/cp-kafka:5.2.2
+    image: confluentinc/cp-kafka:5.5.1
     ports:
-      - "9092:9092"
+      - "19092:19092"
+
     environment:
       KAFKA_BROKER_ID: 0
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
@@ -37,5 +39,8 @@ services:
       REDIS_PORT: "6379:6379"
       REDIS_DB: "0"
       KAFKA_BROKER: "kafka:19092"
-      KAFA_RISK_TOPIC: "customer-risk-topic"
-    depends_on: -"kafka"
+      KAFA_RISK_TOPIC: "customer-risk"
+    depends_on: 
+      - "kafka"
+      - "redis"
+
